@@ -74,6 +74,7 @@ namespace DLM.LunchOrder.UI
 
         private void ClearOrderTotals()
         {
+            //clearing out all totals 
             textBox1.Text = "Subtotal: ";
             textBox2.Text = "Tax: ";
             textBox3.Text = "Total Due: ";
@@ -81,6 +82,7 @@ namespace DLM.LunchOrder.UI
 
         private void grpmainCourse_CheckedChanged(object sender, EventArgs e)
         {
+            // removing checks from the add on group box clearing the order total then calculating the new total
             ClearAddOnCheckmarks();
             ClearOrderTotals();
             CalculateOrder();
@@ -88,17 +90,20 @@ namespace DLM.LunchOrder.UI
 
         private void grpaddOn_CheckedChanged(object sender, EventArgs e)
         {
+            //clearing totals once the checkbox changes then calculating the order
             ClearOrderTotals();
             CalculateOrder();
         }
 
         private void btnPlaceOrder_Click(object sender, EventArgs e)
         {
+            //running the code once the place order button is clicked 
             CalculateOrder();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //Exiting the application
             Application.Exit();
         }
     }

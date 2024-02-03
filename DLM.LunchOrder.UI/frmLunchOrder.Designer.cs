@@ -81,6 +81,7 @@
             rbtnSalad.TabStop = true;
             rbtnSalad.Text = "Salad - $4.95";
             rbtnSalad.UseVisualStyleBackColor = true;
+            rbtnSalad.CheckedChanged += grpmainCourse_CheckedChanged;
             // 
             // rbtnPizza
             // 
@@ -93,6 +94,7 @@
             rbtnPizza.TabStop = true;
             rbtnPizza.Text = "Pizza - $5.95";
             rbtnPizza.UseVisualStyleBackColor = true;
+            rbtnPizza.CheckedChanged += grpmainCourse_CheckedChanged;
             // 
             // rbtnHamburger
             // 
@@ -105,6 +107,7 @@
             rbtnHamburger.TabStop = true;
             rbtnHamburger.Text = "Hamburger - $6.95";
             rbtnHamburger.UseVisualStyleBackColor = true;
+            rbtnHamburger.CheckedChanged += grpmainCourse_CheckedChanged;
             // 
             // grpaddOn
             // 
@@ -137,6 +140,7 @@
             ckbxOption9.Text = "Bread Sticks";
             ckbxOption9.UseVisualStyleBackColor = true;
             ckbxOption9.Visible = false;
+            ckbxOption9.CheckedChanged += grpaddOn_CheckedChanged;
             // 
             // ckbxOption8
             // 
@@ -149,6 +153,7 @@
             ckbxOption8.Text = "Bacon Bits";
             ckbxOption8.UseVisualStyleBackColor = true;
             ckbxOption8.Visible = false;
+            ckbxOption8.CheckedChanged += grpaddOn_CheckedChanged;
             // 
             // ckbxOption7
             // 
@@ -161,6 +166,7 @@
             ckbxOption7.Text = "Croutons";
             ckbxOption7.UseVisualStyleBackColor = true;
             ckbxOption7.Visible = false;
+            ckbxOption7.CheckedChanged += grpaddOn_CheckedChanged;
             // 
             // ckbxOption6
             // 
@@ -173,6 +179,7 @@
             ckbxOption6.Text = "Olives";
             ckbxOption6.UseVisualStyleBackColor = true;
             ckbxOption6.Visible = false;
+            ckbxOption6.CheckedChanged += grpaddOn_CheckedChanged;
             // 
             // ckbxOption5
             // 
@@ -185,6 +192,7 @@
             ckbxOption5.Text = "Sausage";
             ckbxOption5.UseVisualStyleBackColor = true;
             ckbxOption5.Visible = false;
+            ckbxOption5.CheckedChanged += grpaddOn_CheckedChanged;
             // 
             // ckbxOption4
             // 
@@ -197,6 +205,7 @@
             ckbxOption4.Text = "Pepperoni";
             ckbxOption4.UseVisualStyleBackColor = true;
             ckbxOption4.Visible = false;
+            ckbxOption4.CheckedChanged += grpaddOn_CheckedChanged;
             // 
             // ckbxOption3
             // 
@@ -208,6 +217,7 @@
             ckbxOption3.TabIndex = 2;
             ckbxOption3.Text = "French Fries";
             ckbxOption3.UseVisualStyleBackColor = true;
+            ckbxOption3.CheckedChanged += grpaddOn_CheckedChanged;
             // 
             // ckbxOption2
             // 
@@ -219,6 +229,7 @@
             ckbxOption2.TabIndex = 1;
             ckbxOption2.Text = "Ketchup, Mustard, and Mayo";
             ckbxOption2.UseVisualStyleBackColor = true;
+            ckbxOption2.CheckedChanged += grpaddOn_CheckedChanged;
             // 
             // ckbxOption1
             // 
@@ -231,6 +242,7 @@
             ckbxOption1.Text = "Lettuce, Tomato, and Onion";
             ckbxOption1.TextAlign = ContentAlignment.MiddleCenter;
             ckbxOption1.UseVisualStyleBackColor = true;
+            ckbxOption1.CheckedChanged += grpaddOn_CheckedChanged;
             // 
             // groupBox3
             // 
