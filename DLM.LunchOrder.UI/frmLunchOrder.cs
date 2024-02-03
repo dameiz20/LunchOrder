@@ -4,9 +4,7 @@ namespace DLM.LunchOrder.UI
 {
     public partial class frmLunchOrder : Form
     {
-        
-        private const decimal AddOnPrice = 0.75m;
-
+        // Variables to store user selections
         private decimal subtotal = 0.0m;
         private decimal tax = 0.0m;
         private decimal total = 0.0m;
@@ -17,6 +15,7 @@ namespace DLM.LunchOrder.UI
         }
         private void CalculateOrder()
         {
+            // Clear order totals
             subtotal = 0.0m;
             tax = 0.0m;
             total = 0.0m;
@@ -28,38 +27,86 @@ namespace DLM.LunchOrder.UI
                 subtotal += 5.95m;
             else if (rbtnSalad.Checked)
                 subtotal += 4.95m;
+               
 
             // Check add-ons and update subtotal
             if (ckbxOption1.Checked)
-                subtotal += AddOnPrice;
-            if (ckbxOption2.Checked)
-                subtotal += AddOnPrice;
+                subtotal += 0.75m;
+            if(ckbxOption2.Checked)
+                subtotal += 0.75m;
             if (ckbxOption3.Checked)
-                subtotal += AddOnPrice;
+                subtotal += 0.75m;
             if (ckbxOption4.Checked)
-                subtotal += AddOnPrice;
+                subtotal += 0.50m;
             if (ckbxOption5.Checked)
-                subtotal += AddOnPrice;
+                subtotal += 0.50m;
             if (ckbxOption6.Checked)
-                subtotal += AddOnPrice;
+                subtotal += 0.50m;
             if (ckbxOption7.Checked)
-                subtotal += AddOnPrice;
+                subtotal += 0.25m;
             if (ckbxOption8.Checked)
-                subtotal += AddOnPrice;
+                subtotal += 0.25m;
             if (ckbxOption9.Checked)
-                subtotal += AddOnPrice;
+                subtotal += 0.25m;
 
+
+            // Calculate tax and total
             tax = subtotal * 0.0775m;
             total = subtotal + tax;
 
-            textBox1.Text = $"Subtotal: {subtotal:C}";
-            textBox2.Text = $"Tax: {tax:C}";
-            textBox3.Text = $"Total Due: {total:C}";
+            // Update textboxes to display the calculated values
+            textBox1.Text = $" {subtotal:C}";
+            textBox2.Text = $" {tax:C}";
+            textBox3.Text = $" {total:C}";
         }
 
+        // Event handler for main course selection change
+        private void grpmainCourse_CheckedChanged(object sender, EventArgs e)
+        {
+            // Clear add-on checkmarks and order totals
+            ClearOrderTotals();
+            if (rbtnHamburger.Checked)
+            {
+                grpaddOn.Text = "Add-Ons ($.75/each)";
+                ckbxOption1.Visible = ckbxOption2.Visible = ckbxOption3.Visible = true;
+                ckbxOption4.Visible = ckbxOption5.Visible = ckbxOption6.Visible = false;
+                ckbxOption7.Visible = ckbxOption8.Visible = ckbxOption9.Visible = false;
+
+                ClearAddOnCheckmarks();
+            }
+            else if (rbtnPizza.Checked)
+            {
+                grpaddOn.Text = "Add-Ons ($.50/each)";
+                ckbxOption1.Visible = ckbxOption2.Visible = ckbxOption3.Visible = false;
+                ckbxOption4.Visible = ckbxOption5.Visible = ckbxOption6.Visible = true;
+                ckbxOption7.Visible = ckbxOption8.Visible = ckbxOption9.Visible = false;
+
+                ClearAddOnCheckmarks();
+            }
+            else if (rbtnSalad.Checked)
+            {
+                grpaddOn.Text = "Add-Ons ($.25/each)";
+                ckbxOption1.Visible = ckbxOption2.Visible = ckbxOption3.Visible = false;
+                ckbxOption4.Visible = ckbxOption5.Visible = ckbxOption6.Visible = false;
+                ckbxOption7.Visible = ckbxOption8.Visible = ckbxOption9.Visible = true;
+                
+                ClearAddOnCheckmarks();
+            }
+        }
+
+        // Event handler for add-on selection change
+        private void grpaddOn_CheckedChanged(object sender, EventArgs e)
+        {
+            // Clear order totals
+
+            ClearOrderTotals();
+            //CalculateOrder();
+        }
+
+        // Method to clear add-on checkmarks
         private void ClearAddOnCheckmarks()
         {
-            // Clear add-on checkmarks within the addOnsGroupBox
+            
             ckbxOption1.Checked = false;
             ckbxOption2.Checked = false;
             ckbxOption3.Checked = false;
@@ -72,32 +119,18 @@ namespace DLM.LunchOrder.UI
 
         }
 
+        // Method to clear order totals
         private void ClearOrderTotals()
         {
-            //clearing out all totals 
-            textBox1.Text = "Subtotal: ";
-            textBox2.Text = "Tax: ";
-            textBox3.Text = "Total Due: ";
+            
+            textBox1.Text = " ";
+            textBox2.Text = " ";
+            textBox3.Text = " ";
         }
-
-        private void grpmainCourse_CheckedChanged(object sender, EventArgs e)
-        {
-            // removing checks from the add on group box clearing the order total then calculating the new total
-            ClearAddOnCheckmarks();
-            ClearOrderTotals();
-            CalculateOrder();
-        }
-
-        private void grpaddOn_CheckedChanged(object sender, EventArgs e)
-        {
-            //clearing totals once the checkbox changes then calculating the order
-            ClearOrderTotals();
-            CalculateOrder();
-        }
-
+        // Event handler for Place Order button click
         private void btnPlaceOrder_Click(object sender, EventArgs e)
         {
-            //running the code once the place order button is clicked 
+            // Calculate and display the order totals
             CalculateOrder();
         }
 

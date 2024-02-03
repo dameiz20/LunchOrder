@@ -145,7 +145,7 @@
             // ckbxOption8
             // 
             ckbxOption8.AutoSize = true;
-            ckbxOption8.Location = new Point(10, 50);
+            ckbxOption8.Location = new Point(10, 51);
             ckbxOption8.Margin = new Padding(3, 2, 3, 2);
             ckbxOption8.Name = "ckbxOption8";
             ckbxOption8.Size = new Size(81, 19);
@@ -184,7 +184,7 @@
             // ckbxOption5
             // 
             ckbxOption5.AutoSize = true;
-            ckbxOption5.Location = new Point(10, 50);
+            ckbxOption5.Location = new Point(10, 51);
             ckbxOption5.Margin = new Padding(3, 2, 3, 2);
             ckbxOption5.Name = "ckbxOption5";
             ckbxOption5.Size = new Size(69, 19);
@@ -270,6 +270,7 @@
             textBox3.ReadOnly = true;
             textBox3.Size = new Size(110, 23);
             textBox3.TabIndex = 5;
+            textBox3.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox2
             // 
@@ -280,6 +281,7 @@
             textBox2.ReadOnly = true;
             textBox2.Size = new Size(110, 23);
             textBox2.TabIndex = 4;
+            textBox2.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox1
             // 
@@ -321,7 +323,7 @@
             // 
             // btnPlaceOrder
             // 
-            btnPlaceOrder.Location = new Point(438, 186);
+            btnPlaceOrder.Location = new Point(360, 189);
             btnPlaceOrder.Margin = new Padding(3, 2, 3, 2);
             btnPlaceOrder.Name = "btnPlaceOrder";
             btnPlaceOrder.Size = new Size(82, 22);
@@ -332,7 +334,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(438, 266);
+            button2.Location = new Point(360, 265);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
             button2.Size = new Size(82, 22);
